@@ -1,0 +1,17 @@
+{
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ascii-dresden/website2026"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "autoprefixer": "^10.3.1",
+        "postcss": "^8.3.6",
+        "postcss-cli": "^8.3.1",
+        "postcss-purgecss": "^2.0.3",
+        "tailwindcss": "^2.2.7"
+    },
+    "name": "ascii-dresden",
+    "version": "0.1.0"
+}

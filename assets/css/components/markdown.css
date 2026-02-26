@@ -1,0 +1,284 @@
+#markdown {
+    @apply font-sans;
+    margin: 0 auto;
+    max-width: 80%;
+    hyphens: auto;
+    text-align: left;
+    line-height: 1.6;
+    color: #523A28;
+    background-color: transparent;
+}
+
+.w-full {
+    max-width: 100% !important;
+}
+
+#markdown h2,h3,h4,h5,h6 {
+    @apply mt-6;
+}
+
+#markdown h1 {
+    @apply font-title text-2xl sm:text-3xl md:text-4xl mb-4;
+}
+
+#markdown.title-center {
+    @apply text-center;
+}
+
+#markdown.title-center h1 {
+    @apply inline-block;
+}
+
+#markdown h2 {
+    @apply font-mono font-semibold mb-4 text-xl;
+    color: #523A28;
+}
+
+#markdown h3 {
+    @apply font-mono font-medium mb-3 text-lg;
+    color: #523A28;
+}
+
+#markdown h4 {
+    @apply font-mono font-medium mb-2 text-base;
+    color: #523A28;
+}
+
+#markdown h5 {
+    @apply font-mono font-medium mb-2 text-sm;
+    color: #523A28;
+}
+
+#markdown h6 {
+    @apply font-mono font-medium mb-2 text-xs;
+    color: #523A28;
+}
+
+#markdown p {
+    @apply mb-4;
+    font-size: 1.1rem;
+    color: #523A28;
+}
+
+#markdown ul, #markdown ol {
+    @apply mb-4 pl-5;
+}
+
+#markdown li {
+    @apply mb-2;
+    font-size: 1.1rem;
+    color: #523A28;
+}
+
+#markdown ul {
+    @apply list-disc;
+}
+
+#markdown ol {
+    @apply list-decimal;
+}
+
+#markdown blockquote {
+    @apply relative pl-6 my-6;
+    background-color: #F3EFE6;
+    padding: 20px 20px 20px 20px;
+    color: #523A28;
+    border: 1px solid #523A28;
+    box-shadow: 0 4px 0 0 #523A28;
+}
+
+#markdown blockquote p {
+    @apply mb-0;
+}
+
+#markdown hr {
+    @apply my-8 border-0 h-px;
+    background: #8C715E;
+}
+
+#markdown table {
+    @apply w-full mb-6 overflow-hidden;
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.1rem;
+    color: #523A28;
+    border: 1px solid #523A28;
+    box-shadow: 0 4px 0 0 #523A28;
+    table-layout: auto;
+}
+
+#markdown th,
+#markdown td {
+    @apply px-4 py-3 text-left;
+    background-color: #F3EFE6;
+    border: 1px solid rgba(140, 113, 94, 0.25);
+}
+
+#markdown th {
+    @apply font-bold;
+    color: #523A28;
+}
+
+#markdown a {
+    @apply transition-colors duration-200;
+    color: #8C715E;
+    text-decoration: none;
+}
+
+#markdown a:hover {
+    @apply underline;
+    color: #523A28;
+}
+
+#markdown img {
+    @apply w-full mb-5 rounded-lg;
+    max-height: 60vh;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+#markdown code {
+    @apply font-mono text-sm px-1.5 py-0.5 rounded;
+    background-color: #F3EFE6 !important;
+    color: #523A28 !important;
+    border: 1px solid rgba(140, 113, 94, 0.3);
+}
+
+#markdown pre {
+    @apply my-4 p-4 rounded-lg overflow-x-auto;
+    background-color: #2D2622 !important;
+    border: 1px solid #523A28;
+    box-shadow: 0 4px 0 0 #523A28;
+}
+
+#markdown pre code {
+    @apply bg-transparent border-0 p-0;
+    background-color: transparent !important;
+    color: #523A28 !important;
+}
+
+#markdown h1 code,
+#markdown h2 code,
+#markdown h3 code,
+#markdown h4 code,
+#markdown h5 code,
+#markdown h6 code {
+    @apply text-base;
+}
+
+#markdown blockquote ul,
+#markdown blockquote ol {
+    @apply mb-0;
+}
+
+#markdown kbd {
+    @apply font-mono text-xs px-2 py-1 rounded;
+    background-color: #F3EFE6;
+    color: #523A28;
+    border: 1px solid #523A28;
+    box-shadow: 0 2px 0 0 #523A28;
+}
+
+#markdown dl {
+    @apply my-4;
+}
+
+#markdown dt {
+    @apply font-bold mt-3;
+    color: #523A28;
+}
+
+#markdown dd {
+    @apply ml-4 mb-3;
+    color: #523A28;
+}
+
+@media (max-width: 768px) {
+    #markdown {
+        @apply max-w-full px-4;
+    }
+
+    #markdown h1 {
+        @apply text-3xl;
+    }
+
+    #markdown h2 {
+        @apply text-xl;
+    }
+
+    #markdown h3 {
+        @apply text-lg;
+    }
+
+    #markdown h4 {
+        @apply text-base;
+    }
+
+    #markdown h5 {
+        @apply text-sm;
+    }
+
+    #markdown h6 {
+        @apply text-xs;
+    }
+
+    #markdown p,
+    #markdown li {
+        @apply text-base;
+    }
+
+    #markdown table {
+        font-size: 0.9rem;
+    }
+
+    #markdown th,
+    #markdown td {
+        @apply px-3 py-2;
+    }
+}
+
+@media (max-width: 576px) {
+    #markdown {
+        @apply max-w-full px-4;
+    }
+
+    #markdown h1 {
+        @apply text-2xl mb-4;
+    }
+
+    #markdown h2 {
+        @apply text-xl mb-4;
+    }
+
+    #markdown h3 {
+        @apply text-lg mb-3;
+    }
+
+    #markdown h4 {
+        @apply text-base mb-2;
+    }
+
+    #markdown h5 {
+        @apply text-sm mb-2;
+    }
+
+    #markdown h6 {
+        @apply text-xs mb-2;
+    }
+
+    #markdown p,
+    #markdown li {
+        @apply text-sm;
+    }
+
+    #markdown blockquote {
+        @apply pl-4 py-4 mx-0;
+        font-size: 0.9rem;
+    }
+
+    #markdown blockquote:before {
+        @apply left-2;
+    }
+}

@@ -1,0 +1,30 @@
+<!-- Localization Auto Redirect -->
+{{ if .IsHome }}
+    <script>
+        const cachedLang = localStorage.getItem("language");
+        const path = globalThis.location.pathname;
+
+        if (cachedLang) {
+            if (cachedLang === "de" && path !== "/") {
+                globalThis.location.href = "/";
+            } else if (cachedLang === "en" && path !== "/en/") {
+                globalThis.location.href = "/en/";
+            }
+        } else {
+            const lang = navigator.language;
+
+            if (lang.startsWith("de")) {
+                localStorage.setItem("language", "de");
+            } else {
+                localStorage.setItem("language", "en");
+            }
+        }
+    </script>
+{{ end }}
+
+{{ $carousel := resources.Get "js/carousel.js" }}
+{{ if $carousel }}
+    {{ $carousel = $carousel | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $carousel.RelPermalink }}" integrity="{{ $carousel.Data.Integrity }}" crossorigin="anonymous"
+            defer></script>
+{{ end }}

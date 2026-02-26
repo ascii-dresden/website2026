@@ -1,0 +1,116 @@
+<header class="py-20 flex items-center bg-background-light overflow-hidden">
+    <div class="container mx-auto flex flex-col lg:flex-row gap-20 lg:gap-16">
+        <div class="lg:w-1/2 flex items-center justify-center">
+            <div class="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start max-w-sm sm:max-w-md lg:max-w-none">
+                <div class="relative">
+                    <p class="text-base text-primary/60 mb-2 font-mono">~/ascii-cafe$ ./welcome</p>
+                    <h1 class="font-title font-bold text-6xl md:text-7xl text-primary">
+                        ascii Café
+                    </h1>
+                </div>
+
+                <p class="font-subtitle text-secondary leading-relaxed text-lg md:text-xl md:pl-4 md:border-l-2 md:border-amber-400/50">
+                    {{ if eq .Language.Lang "en" }}
+                        Your student-run café <span
+                                class="font-medium text-primary">ASCII Dresden e.V.</span> in the Faculty of Computer Science at the Technical University of Dresden.
+                    {{ else }}
+                        Dein studentisch geführtes Café <span
+                                class="font-medium text-primary">ASCII Dresden e.V.</span> in der Informatik Fakultät der Technischen Universität Dresden.
+                    {{ end }}
+                </p>
+
+                <a class="btn-primary" href="/menu">
+                    <span>{{ if eq .Language.Lang "en" }}browse the menu{{ else }}zum Menu{{ end }}</span>
+                    <span class="material-icons text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </a>
+
+                <div class="flex flex-nowrap items-center gap-6 text-sm text-secondary/70 pt-4 overflow-x-auto">
+                    <div class="flex items-center gap-2 group flex-shrink-0 whitespace-nowrap">
+                        <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-base text-amber-500">schedule</span>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-medium text-primary">Mo–Fr</p>
+                            <p class="text-xs">
+                                {{ if eq .Language.Lang "en" }}9 am – 4 pm{{ else }}9 – 16 Uhr{{ end }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:block h-8 w-px bg-primary/20 flex-shrink-0"></div>
+
+                    <div class="hidden sm:flex items-center gap-2 group flex-shrink-0 whitespace-nowrap">
+                        <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-base text-amber-500">wifi</span>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-medium text-primary">WiFi</p>
+                            <p class="text-xs">
+                                {{ if eq .Language.Lang "en" }}Eduroam{{ else }}Eduroam{{ end }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="h-8 w-px bg-primary/20 flex-shrink-0"></div>
+
+                    <div class="flex items-center gap-2 group flex-shrink-0 whitespace-nowrap">
+                        <div class="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-base text-amber-500">local_cafe</span>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-medium text-primary">{{ if eq .Language.Lang "en" }}Offers{{ else }}Angebot{{ end }}</p>
+                            <p class="text-xs">
+                                {{ if eq .Language.Lang "en" }}for a student-friendly price{{ else }}zu studentischen Preisen{{ end }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:w-1/2 flex items-center justify-center order-1 md:order-2 mb-8 md:mb-0">
+            <div class="glass-terminal w-full md:w-4/5 lg:w-full max-w-md sm:max-w-lg md:max-w-none aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden flex flex-col font-mono border border-white/20 shadow-lg">
+
+                <div class="bg-gradient-to-r from-white/40 to-white/20 backdrop-blur-xl px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 border-b border-primary/20 relative">
+                    <div class="flex gap-2 flex-shrink-0">
+                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400/80 hover:bg-red-400 transition-colors cursor-pointer"></div>
+                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-400/80 hover:bg-yellow-400 transition-colors cursor-pointer"></div>
+                        <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-400/80 hover:bg-green-400 transition-colors cursor-pointer"></div>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
+                        <div class="inline-flex items-center gap-2 bg-primary/10 px-4 py-1 rounded-full backdrop-blur-sm">
+                            <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                            <span class="text-xs text-primary font-semibold tracking-widest">ascii — local — zsh</span>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 sm:hidden">
+                        <div class="inline-flex items-center gap-1 bg-primary/10 px-3 py-0.5 rounded-full backdrop-blur-sm">
+                            <div class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+                            <span class="text-[10px] text-primary font-semibold tracking-wider">ascii-cafe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:p-6 md:p-8 lg:p-10 bg-paper-light text-primary space-y-4 sm:space-y-6 font-mono flex-grow">
+                    <div class="flex gap-2 items-center">
+                        <span class="opacity-60">$</span>
+                        <span class="text-sm sm:text-base">brew install coffee</span>
+                    </div>
+
+                    <div class="space-y-1">
+                        <p class="text-sm sm:text-base">=> pouring bean.pkg</p>
+                        <p class="text-xs sm:text-sm opacity-70">########################################### 100.0%</p>
+                    </div>
+
+                    <div class="pt-2">
+                        <p class="font-semibold text-sm sm:text-base">Pouring ... Done!</p>
+                        <div class="flex gap-1 mt-3 sm:mt-4 items-center">
+                            <span class="opacity-60">$</span>
+                            <span class="w-3 h-5 bg-primary/60 animate-pulse"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

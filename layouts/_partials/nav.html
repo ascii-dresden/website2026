@@ -1,0 +1,176 @@
+<nav class="fixed w-full z-50 bg-background-light/80 backdrop-blur-md border-b border-primary/10">
+    <div class="mx-auto container">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <div class="flex items-center">
+                <a href="{{ if eq .Site.Language.Lang "en" }}/en{{ else }}/{{ end }}">
+                    {{ with resources.Get "icons/ascii.svg" }}
+                        <img src="{{ .RelPermalink }}" alt="ASCII Café Logo" class="h-8 w-auto">
+                    {{ end }}
+                </a>
+            </div>
+
+            <div class="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2 space-x-8 font-mono text-sm tracking-widest">
+                {{ $currentPage := . }}
+                {{ $navItems := slice }}
+
+                {{ if eq .Site.Language.Lang "en" }}
+                    {{ $navItems = $navItems | append (dict "name" "About" "url" "/en/about") }}
+                    {{ $navItems = $navItems | append (dict "name" "News" "url" "/en/news") }}
+                    {{ $navItems = $navItems | append (dict "name" "Menu" "url" "/en/menu") }}
+                    {{ $navItems = $navItems | append (dict "name" "Caterings" "url" "/en/caterings") }}
+                {{ else }}
+                    {{ $navItems = $navItems | append (dict "name" "Über uns" "url" "/about") }}
+                    {{ $navItems = $navItems | append (dict "name" "News" "url" "/news") }}
+                    {{ $navItems = $navItems | append (dict "name" "Angebot" "url" "/menu") }}
+                    {{ $navItems = $navItems | append (dict "name" "Caterings" "url" "/caterings") }}
+                {{ end }}
+
+                {{ range $navItems }}
+                    <a href="{{ .url }}"
+                       class="text-secondary hover:text-primary transition-colors duration-200
+                              {{ if eq $currentPage.RelPermalink .url }}text-primary{{ end }}">
+                        ~/{{ .name }}/
+                    </a>
+                {{ end }}
+            </div>
+
+            <div class="flex items-center">
+                <output id="opening-status-desktop"
+                        class="text-sm items-center gap-4 font-mono tracking-widest uppercase px-6 justify-center w-full py-3 rounded-lg font-medium hidden lg:flex"
+                        aria-live="polite"
+                        data-open-text="{{ if eq .Site.Language.Lang "en" }}Open{{ else }}Geöffnet{{ end }}"
+                        data-closed-text="{{ if eq .Site.Language.Lang "en" }}Closed{{ else }}Geschlossen{{ end }}">
+                    <span id="opening-text-desktop"></span>
+                </output>
+
+                <button class="lg:hidden p-2 text-secondary hover:text-primary"
+                        id="mobile-menu-button"
+                        aria-label="{{ if eq .Site.Language.Lang "en" }}Open menu{{ else }}Menü öffnen{{ end }}">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="lg:hidden hidden bg-background-light border-t border-primary/10" id="mobile-menu">
+            <div class="py-4 space-y-4 font-mono text-sm tracking-widest">
+                {{ range $navItems }}
+                    <a href="{{ .url }}"
+                       class="block px-4 py-2 text-secondary hover:text-primary hover:bg-primary/5 transition-colors duration-200
+                              {{ if eq $currentPage.RelPermalink .url }}text-primary bg-primary/5{{ end }}">
+                        ~/{{ .name }}/
+                    </a>
+                {{ end }}
+
+                <div class="px-4 pt-4 border-t border-primary/10">
+                    <output id="opening-status-mobile"
+                            class="text-sm inline-flex items-center gap-4 font-mono tracking-widest uppercase px-6 justify-center w-full py-3 rounded-lg font-medium"
+                            aria-live="polite"
+                            data-open-text="{{ if eq .Site.Language.Lang "en" }}Open{{ else }}Geöffnet{{ end }}"
+                            data-closed-text="{{ if eq .Site.Language.Lang "en" }}Closed{{ else }}Geschlossen{{ end }}">
+                        <span id="opening-text-mobile"></span>
+                    </output>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<script>
+    function applyStatus(el, isOpen) {
+        if (!el) return;
+        const openText = el.dataset.openText || 'Geöffnet';
+        const closedText = el.dataset.closedText || 'Geschlossen';
+        const textEl = el.querySelector('[id^="opening-text-"]') || el;
+
+        el.classList.remove('text-green-500', 'bg-green-500/10', 'text-red-500', 'bg-red-500/10');
+        if (isOpen) {
+            el.classList.add('text-green-500', 'bg-green-500/10');
+            if (textEl) textEl.textContent = openText;
+        } else {
+            el.classList.add('text-red-500', 'bg-red-500/10');
+            if (textEl) textEl.textContent = closedText;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (!menuButton || !mobileMenu) return;
+
+        let isOpen = !mobileMenu.classList.contains('hidden');
+        const path = menuButton.querySelector('path');
+
+        const HAMBURGER = 'M4 6h16M4 12h16M4 18h16';
+        const CLOSE = 'M6 18L18 6M6 6l12 12';
+
+        function setIcon(open) {
+            if (!path) return;
+            path.setAttribute('d', open ? CLOSE : HAMBURGER);
+        }
+
+        function openMenu() {
+            mobileMenu.classList.remove('hidden');
+            menuButton.setAttribute('aria-expanded', 'true');
+            isOpen = true;
+            setIcon(true);
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+            isOpen = false;
+            setIcon(false);
+        }
+
+        // Toggle on button click (stopPropagation to avoid immediate document handler)
+        menuButton.addEventListener('click', function (e) {
+            e.stopPropagation();
+            isOpen ? closeMenu() : openMenu();
+        });
+
+        // Close when clicking outside (use closest for cheap checks)
+        document.addEventListener('click', function (e) {
+            if (!e.target || (e.target instanceof Node && !e.target.closest('#mobile-menu') && !e.target.closest('#mobile-menu-button'))) {
+                closeMenu();
+            }
+        }, {passive: true});
+
+        // Delegate link clicks inside the mobile menu to a single handler
+        mobileMenu.addEventListener('click', function (e) {
+            if (e.target && e.target.closest && e.target.closest('a')) {
+                closeMenu();
+            }
+        });
+
+        // Ensure initial icon state
+        setIcon(isOpen);
+
+        function checkIsOpenNow() {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            // Open Mo-Fri 09:00-15:59
+            return day >= 1 && day <= 5 && hour >= 9 && hour < 16;
+        }
+
+        function updateOpeningStatus() {
+            const desktop = document.getElementById('opening-status-desktop');
+            const mobile = document.getElementById('opening-status-mobile');
+            const isOpen = checkIsOpenNow();
+            applyStatus(desktop, isOpen);
+            applyStatus(mobile, isOpen);
+        }
+
+        updateOpeningStatus();
+
+        const now = new Date();
+        const msToNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+        setTimeout(function () {
+            updateOpeningStatus();
+            setInterval(updateOpeningStatus, 60 * 1000);
+        }, msToNextMinute);
+    });
+</script>
