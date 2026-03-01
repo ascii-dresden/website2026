@@ -8,13 +8,15 @@
     },
     "scripts": {
         "start": "hugo server -D",
-        "build": "hugo --minify",
-        "build:css": "NODE_ENV=production postcss assets/css/main.css -o resources/_gen/assets/css/main.css"
+        "build": "HUGO_ENVIRONMENT=production hugo --minify",
+        "build:css": "HUGO_ENVIRONMENT=production NODE_ENV=production postcss assets/css/main.css -o resources/_gen/assets/css/main.css",
+        "build:prod": "npm run build:css && npm run build"
     },
     "devDependencies": {
         "tailwindcss": "^3.3.2",
         "postcss": "^8.4.23",
         "postcss-cli": "^10.1.0",
+        "cssnano": "^7.1.2",
         "autoprefixer": "^10.4.14"
     }
 }
