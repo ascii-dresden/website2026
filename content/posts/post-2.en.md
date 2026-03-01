@@ -1,11 +1,11 @@
 ---
-title: "Fresh Coffee"
-tag: "COMMUNITY"
-tagColor: "bg-purple-100 text-purple-800"
-date: "2026-01-28"
-image: "/images/kaffeetasse.webp"
-description: "Those who code a lot also need good coffee! At our ASCII Café, freshly brewed coffee is available daily."
-slug: "frischer-kaffee-im-ascii-cafe"
+title: "New look – same ascii"
+tag: "UPDATE"
+tagColor: "bg-blue-100 text-blue-800"
+date: "2026-03-01"
+image: "/images/website-preview.webp"
+description: "If you're reading this, then you've clearly found your way to our new website! From now on, this will be the place for news about our events and offers, as well as more information about our club's history. Feel free to click around. There's even a rumor that there's a hidden Easter egg. :P"
+slug: "our-new-website"
 draft: false
 layout: post
 ---

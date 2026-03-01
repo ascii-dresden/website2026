@@ -1,11 +1,11 @@
 ---
-title: "Spieleabend im ascii Café"
-tag: "EVENT"
-tagColor: "bg-blue-100 text-blue-800"
-date: "2026-02-03"
-image: "/images/spieleabend.webp"
-description: "Im und rund um das ascii Café finden regelmäßig Spieleabende statt. Komm vorbei, trink einen Kaffee und spiel mit uns!"
-slug: "spieleabend-im-ascii-cafe"
+title: "Kilimo-März im ascii!"
+tag: "ANGEBOT"
+tagColor: "bg-red-100 text-red-800"
+date: "2026-03-01"
+image: "/images/getraenke.webp"
+description: "Passend zum Frühlingsanfang haben wir unsere Kirsch-Limonade (aka Kilimo) den ganzen Monat für nur 1,20€ im Angebot. Perfekt für die erste Sonne! :D"
+slug: "getraenk-des-monats-kilimo"
 draft: false
 layout: post
 ---

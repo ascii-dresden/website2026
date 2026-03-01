@@ -12,6 +12,6 @@ Unser Angebot umfasst frisch belegte Brötchen, Brezeln und Butterbrezeln, Kuche
 
 Wir setzen auf unkomplizierte Organisation, verlässliche Bereitstellung und eine Versorgung, die ohne großen Aufwand funktioniert. Sprich uns einfach mit deinem Bedarf, Termin und ungefähren Personenzahl an, dann stellen wir ein passendes Angebot zusammen.
 
-Schrieb uns einfach eine Mail an:caterings@ascii-dresden.de
+Schrieb uns einfach eine Mail an: [caterings@ascii-dresden.de](mailto:caterings@ascii-dresden.de) 
 
 {{< carousel images="images/catering-1.jpeg,images/catering-2.jpeg,images/catering-3.jpeg" autoplay="4" >}}

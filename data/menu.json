@@ -2,52 +2,52 @@
     "drinks_de": [
         {
             "name": "Kaffee",
-            "price": "1,00 €",
+            "price": "1,00 € + 1€ Tassenpfand",
             "description": "Klassischer Filterkaffee"
         },
         {
             "name": "Kaffee Crème",
-            "price": "1,00 €",
+            "price": "1,00 € + 1€ Tassenpfand",
             "description": "Kaffee mit Milchschaum"
         },
         {
             "name": "Espresso",
-            "price": "1,00 €",
+            "price": "1,00 € + 1€ Tassenpfand",
             "description": "Starker, aromatischer Espresso"
         },
         {
             "name": "Doppelter Espresso",
-            "price": "1,20 €",
+            "price": "1,20 € + 1€ Tassenpfand",
             "description": "Doppelte Menge Espresso"
         },
         {
             "name": "Tee",
-            "price": "kostenlos",
+            "price": "kostenlos +1€ cup deposit",
             "description": "Verschiedene Teesorten"
         },
         {
             "name": "Kakao",
-            "price": "1,00 €",
+            "price": "1,00 € + 1€ Tassenpfand",
             "description": "Heiße Schokolade"
         },
         {
             "name": "Milchkaffee",
-            "price": "1,50 €",
+            "price": "1,50 € + 1€ Tassenpfand",
             "description": "Kaffee mit viel Milch"
         },
         {
             "name": "Cappuccino",
-            "price": "1,50 €",
+            "price": "1,50 € + 1€ Tassenpfand",
             "description": "Espresso mit Milchschaum"
         },
         {
             "name": "Latte Macchiato",
-            "price": "1,50 €",
+            "price": "1,50 € + 1€ Tassenpfand",
             "description": "Geschichteter Milchkaffee"
         },
         {
             "name": "Schokoccino",
-            "price": "1,50 €",
+            "price": "1,50 € + 1€ Tassenpfand",
             "description": "Schokoladiger Cappuccino"
         },
         {
@@ -57,106 +57,106 @@
         },
         {
             "name": "Hackerbrausen 0,33l",
-            "price": "1,50 € + 1€ Pfand",
+            "price": "1,50 €",
             "description": "Erfrischendes Getränk"
         },
         {
             "name": "Hackerbrausen 0,5l",
-            "price": "1,50 € + 1€ Pfand",
+            "price": "1,50 €",
             "description": "Erfrischendes Getränk"
         },
         {
             "name": "Fritz 0,5l",
-            "price": "2,00 € + 1€ Pfand",
+            "price": "2,00 €",
             "description": "Erfrischendes Getränk"
         },
         {
-            "name": "Winter Mate",
+            "name": "Kilimo",
             "price": "1,20 €",
-            "description": "Spezielles Wintergetränk"
+            "description": "Kirsch Limonade vom zickzack-Kollektiv"
         }
     ],
     "drinks_en": [
         {
             "name": "Coffee",
-            "price": "€1.00",
+            "price": "1.00€ + 1€ cup deposit",
             "description": "Classic filter coffee"
         },
         {
             "name": "Coffee Crème",
-            "price": "€1.00",
+            "price": "1.00€ + 1€ cup deposit",
             "description": "Coffee with milk foam"
         },
         {
             "name": "Espresso",
-            "price": "€1.00",
+            "price": "1.00€ + 1€ cup deposit",
             "description": "Strong, aromatic espresso"
         },
         {
             "name": "Double Espresso",
-            "price": "€1.20",
+            "price": "1.20€ + 1€ cup deposit",
             "description": "Double shot of espresso"
         },
         {
             "name": "Tea",
-            "price": "Free",
+            "price": "Free + 1€ cup deposit",
             "description": "Various tea varieties"
         },
         {
             "name": "Hot Chocolate",
-            "price": "€1.00",
+            "price": "1.00€ + 1€ cup deposit",
             "description": "Hot chocolate"
         },
         {
             "name": "Milchkaffee",
-            "price": "€1.50",
+            "price": "1.50€ + 1€ cup deposit",
             "description": "Coffee with lots of milk"
         },
         {
             "name": "Cappuccino",
-            "price": "€1.50",
+            "price": "1.50€ + 1€ cup deposit",
             "description": "Espresso with milk foam"
         },
         {
             "name": "Latte Macchiato",
-            "price": "€1.50",
+            "price": "1.50€ + 1€ cup deposit",
             "description": "Layered milk coffee"
         },
         {
             "name": "Schokoccino",
-            "price": "€1.50",
+            "price": "€1.50€ +1€ cup deposit",
             "description": "Chocolate cappuccino"
         },
         {
             "name": "Water 0.7l",
-            "price": "€0.50",
+            "price": "0.50€",
             "description": "Sparkling, medium or still"
         },
         {
             "name": "Hackerbrausen 0.33l",
-            "price": "€1.50 + €1 deposit",
+            "price": "1.50€",
             "description": "Refreshing beverage"
         },
         {
             "name": "Hackerbrausen 0.5l",
-            "price": "€1.50 + €1 deposit",
+            "price": "1.50€",
             "description": "Refreshing beverage"
         },
         {
             "name": "Fritz 0.5l",
-            "price": "€2.00 + €1 deposit",
+            "price": "2.00€",
             "description": "Refreshing beverage"
         },
         {
-            "name": "Winter Mate",
-            "price": "€1.20",
-            "description": "Special winter drink"
+            "name": "Kilimo",
+            "price": "1.20€",
+            "description": "Cherry Lemonade from zickzack-Kollektiv"
         }
     ],
     "snacks_de": [
         {
             "name": "Obst",
-            "price": "0,70 €",
+            "price": "0,70€",
             "description": "Frisches Obst"
         },
         {
@@ -173,7 +173,7 @@
     "snacks_en": [
         {
             "name": "Fruit",
-            "price": "€0.70",
+            "price": "0.70€",
             "description": "Fresh fruit"
         },
         {

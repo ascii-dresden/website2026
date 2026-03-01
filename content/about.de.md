@@ -12,11 +12,13 @@ Snacks, Kalt- und Heißgetränke, sowie Sofas als idealen Ort zum Verweilen und 
 
 {{< image src="/images/cafe.webp" alt="Tresen des ascii Cafés" >}}
 
+
 ## Ohne Dich sind wir wie Kaffee ohne Bohnen :(
 
 Möchtest du Teil eines bunten Haufens werden und unseren Campus mit Coffein und Limos zu studentischen fairen Preisen
 versorgen? Werde Mitglied bei uns :)? Bei uns kannst du nicht nur Kaffee kochen, sondern auch neue Freundschaften
 knüpfen, Events organisieren und während deiner Schicht kostenlos Getränke schlürfen.
+
 
 ## So erreichst du uns
 
